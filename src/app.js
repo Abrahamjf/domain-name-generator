@@ -7,8 +7,8 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-  var pronoun = ["The", "A", "Two", "Some", "One"];
-  var adj = [
+  var pronouns = ["The", "A", "Two", "Some", "One"];
+  var adjs = [
     "great",
     "big",
     "fat",
@@ -18,23 +18,26 @@ window.onload = function() {
     "bright",
     "lonely"
   ];
-  var noun = ["chicken", "pork", "car", "granny", "mouse", "rabbit", "robot"];
+  var nouns = ["chicken", "pork", "car", "granny", "mouse", "rabbit", "robot"];
 
-  const randomPronoun = () => {
-    return pronoun[Math.floor(Math.random() * pronoun.length)];
-  };
+  for (let i = 0; i < 1000; i++) {
+    const randomPronoun = () => {
+      return pronouns[Math.floor(Math.random() * pronouns.length)];
+    };
 
-  const randomAdj = () => {
-    return adj[Math.floor(Math.random() * adj.length)];
-  };
+    const randomAdj = () => {
+      return adjs[Math.floor(Math.random() * adjs.length)];
+    };
 
-  const randomNoun = () => {
-    return noun[Math.floor(Math.random() * noun.length)];
-  };
+    const randomNoun = () => {
+      return nouns[Math.floor(Math.random() * nouns.length)];
+    };
 
-  let nameDomain = [randomPronoun() + randomAdj() + randomNoun()];
+    let nameDomain = randomPronoun() + randomAdj() + randomNoun() + ".com";
+    let secondNameDomain =
+      randomPronoun() + randomAdj() + randomNoun() + ".net";
 
-  for (let i = 0; i > nameDomain.length; i++) {
-    console.log(nameDomain + ".com");
+    console.log(nameDomain);
+    console.log(secondNameDomain);
   }
 };
